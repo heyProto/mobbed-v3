@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     // $(".banner-div a:empty").parent("p").css("display", "none");
 
-    Util.getJSON('https://cdn.protograph.pykih.com/221bde652489999ea84390c4/index.json', function (err, data){
+    Util.getJSON('https://cdn.protograph.pykih.com/2c678ee79e179794e13bd4b4/index.json', function (err, data){
         if (err != null) {
             alert('Something went wrong: ' + err);
         } else {
