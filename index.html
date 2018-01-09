@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>#mobbed</title>
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Cabin:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/new/grid.css">
+    <link rel="stylesheet" type="text/css" href="src/css/new/navbar.css">
+    <link rel="stylesheet" type="text/css" href="src/css/new/cover.css">
+    <link rel="stylesheet" type="text/css" href="./proto-app-lib.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="https://cdn.protograph.pykih.com/lib/protoGraph.min.js"></script>
+</head>
+<body>
+    <div class="proto-grid-container">
+        <div class="proto-col col-16 navbar">
+            <div class="branding">#<strong>mobbed</strong></div>
+            <div class="nav-links">
+                <div class="single-link active-page stories"><a href="#">Stories</a></div>
+                <div class="single-link data"><a href="./data.html">Data</a></div>
+                <div class="single-link insights"><a href="#">Insights</a></div>
+                <div class="single-link about"><a href="#">About</a></div>
+            </div>
+            <div class="social right-float-div">
+                <div class="single-link facebook">
+                    <a href="http://www.facebook.com/sharer/sharer.php?u=https://cdn.protograph.pykih.com/jaljagran-4/index.html" target="_blank"><img src="img/fb-white.png"></a>
+                </div>
+                <div class="single-link twitter">
+                    <a href="http://twitter.com/share?url=https://cdn.protograph.pykih.com/jaljagran-4/index.html" target="_blank"><img src="img/tw-white.png"></a>
+                </div>
+                <!-- <div class="single-link instagram">
+                    <a href="#" ><img src="img/in-white.png"></a>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="mobile-navigation">
+            <div class="mobile-navbar">
+                <div class="branding">#<strong>mobbed</strong></div>
+                <div class="right-float-div">
+                    <div class="hamburger-icon"><img src="img/hamburger-icon.png"></div>
+                </div>
+            </div>
+
+            <div class="mobile-navigations-screen">
+                <div class="right-float-div">
+                    <div class="close-icon">×</div>
+                </div>
+                <div class="nav-links">
+                    <div class="single-link stories active-page"><a href="#">Stories</a></div>
+                    <div class="single-link data"><a href="./data.html">Data</a></div>
+                    <div class="single-link insights"><a href="#">Insights</a></div>
+                    <div class="single-link about"><a href="#">About</a></div>
+                </div>
+                <div class="social bottom-pull-div">
+                    <div class="single-link facebook">
+                        <a href="http://www.facebook.com/sharer/sharer.php?u=https://cdn.protograph.pykih.com/jaljagran-4/index.html" target="_blank" ><img src="img/fb-black.png"></a>
+                    </div>
+                    <div class="single-link twitter">
+                        <a href="http://twitter.com/share?url=https://cdn.protograph.pykih.com/jaljagran-4/index.html" target="_blank" ><img src="img/tw-black.png"></a>
+                    </div>
+                    <!-- <div class="single-link instagram">
+                        <a href="#" ><img src="img/in-black.png"></a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="proto-col col-16 stick-to-top">
+            <div class="col-16-story-card">
+                <div id='cover_container'></div>
+            </div>
+        </div>
+        <div class="proto-col col-16 proto-nav-sticky">
+            <div class="proto-mobile-grid-navigation">
+                <div class="proto-mobile-grid-navigatio-tab proto-active-tab">ORIGINALS</div>
+                <div class="proto-mobile-grid-navigatio-tab">DIGESTS</div>
+                <div class="proto-mobile-grid-navigatio-tab">OPINIONS</div>
+                <div class="proto-mobile-grid-navigatio-tab">FEED</div>
+            </div>
+        </div>
+        <div class="proto-col col-7 proto-tab-content proto-tab-active-content">
+            <div class="column-title">Originals</div>
+            <div id="originals_container"></div>
+        </div>
+        <div class="proto-col col-4 proto-tab-content">
+            <!-- <div class="col-4-story-card"> -->
+                <div class="column-title">Archive</div>
+                <div id="digests_container"></div>
+            <!-- </div> -->
+        </div>
+        <div class="proto-col col-2 proto-tab-content">
+            <!-- <div class="col-2-story-card"> -->
+                <div class="column-title">Opinions</div>
+                <div id='opinions_container'></div>
+            <!-- </div> -->
+        </div>
+        <div class="proto-col col-3 proto-tab-content">
+            <!-- <div class="col-3-feed-card"> -->
+                <div class="column-title">Feed</div>
+                <div id='feeds_container'></div>
+            <!-- </div> -->
+        </div>
+    </div>
+    <script src="./proto-app-lib.min.js"></script>
+    <script src="./proto-app-cover-page.min.js"></script>
+</body>
+</html>
+
+

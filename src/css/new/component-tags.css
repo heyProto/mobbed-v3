@@ -1,0 +1,65 @@
+.card-tags .publisher-icon{
+	height: 25px;
+	width: 25px;
+	background: red;
+	float: left;
+	margin-right: 10px;
+	border-radius: 50px;
+}
+
+.card-tags .series-name{
+	font-size: 10px;
+	text-transform: uppercase;
+	color: black;
+	background: white; 
+	float: left;
+	height: 20px;
+	display: inline-block;
+	padding: 1px;
+	box-sizing: border-box;
+	padding-left: 5px;
+	border-radius: 4px;
+	font-family: cabin;
+	margin-top: 2px;
+}
+
+.card-tags .series-name .gener{
+	font-size: 10px;
+	text-transform: uppercase;
+	color: white;
+	background: red; 
+	/*float: left;*/
+	height: 18px;
+	display: inline-block;
+	padding: 2px 5px;
+	box-sizing: border-box;
+	margin-left: 3px;
+	font-family: cabin;
+	border-radius: 4px;
+}
+
+.card-tags .sub-gener-light{
+	font-size: 12px;
+	text-transform: uppercase;
+	color: white;
+	font-weight: 900;
+	padding-top: 4px;
+	font-style: italic;
+	display: inline-block;
+	box-sizing: border-box;
+	margin-left: 5px;
+	font-family: cabin;
+}
+
+.card-tags .sub-gener-dark{
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #333;
+	font-weight: bold;
+	padding-top: 4px;
+	font-style: italic;
+	display: inline-block;
+	box-sizing: border-box;
+	margin-left: 5px;
+	font-family: cabin;
+}
