@@ -8,13 +8,18 @@ class MapsCard extends React.Component {
     super(props);
 
     this.districtMapping = {
-      "Agra":"आगरा","Aligarh":"अलीगढ़","Allahabad":"इलाहाबाद","Ambedkar Nagar":"अंबेडकर नगर","Amethi":"अमेठी","Amroha":"अमरोहा","Auraiya":"औरैया","Azamgarh":"आजमगढ़","Baghpat":"बागपत","Bahraich":"बहराइच","Ballia":"बलिया","Balrampur":"बलरामपुर","Banda":"बांदा","Barabanki":"बाराबंकी","Bareilly":"बरेली","Basti":"बस्ती","Bhadohi":"भदोही","Bijnor":"बिजनौर","Budaun":"शाहजहांपुर","Bulandshahar":"बुलंदशहर","Chandauli":"चंदौली","Chitrakoot":"चित्रकूट","Deoria":"देवरिया","Etah":"एटा","Etawah":"इटावा","Faizabad":"फैजाबाद","Farrukhabad":"फर्रुखाबाद","Fatehpur":"फतेहपुर","Firozabad":"फिरोजाबाद","Gautam Buddha Nagar":"गौतम बुद्ध नगर","Ghaziabad":"गाज़ियाबाद","Ghazipur":"गाजीपुर","Gonda":"गोंडा","Gorakhpur":"गोरखपुर","Hamirpur":"हमीरपुर","Hapur":"हापुड़","Hardoi":"हरदोई","Hathras":"हाथरस","Jalaun":"जालौन","Jaunpur":"जौनपुर","Jhansi":"झांसी","Kannauj":"कन्नौज","Kanpur Dehat":"कानपुर देहात","Kanpur Nagar":"कानपुर नगर","Kasganj":"कासगंज","Kaushambi":"कौशाम्बी","Kushinagar":"कुशीनगर","Lakhimpur Kheri":"लखीमपुर खेरी","Lalitpur":"ललितपुर","Lucknow":"लखनऊ","Maharajganj":"महाराजगंज","Mahoba":"महोबा","Mainpuri":"मैनपुरी","Mathura":"मथुरा","Mau":"मऊ","Meerut":"मेरठ","Mirzapur":"मिर्जापुर","Moradabad":"मुरादाबाद","Muzaffarnagar":"मुजफ्फरनगर","Pilibhit":"पीलीभीत","Pratapgarh":"प्रतापगढ़","Raebareli":"रायबरेली","Rampur":"रामपुर","Saharanpur":"सहारनपुर","Sambhal":"संभल","Sant Kabir Nagar":"संत कबीर नगर","Shahjahanpur":"शाहजहांपुर","Shamli":"शामली","Shravasti":"श्रावस्ती","Siddharth Nagar":"सिद्धार्थ नगर","Sitapur":"सीतापुर","Sonbhadra":"सोनभद्र","Sultanpur":"सुल्तानपुर","Unnao":"उन्नाव","Varanasi":"वाराणसी"
+      "Varanasi":"वाराणसी","Unnao":"उन्नाव","Sultanpur":"सुल्तानपुर","Sonbhadra":"सोनभद्र","Sitapur":"सीतापुर","Siddharth Nagar":"सिद्धार्थ नगर","Shravasti":"श्रावस्ती","Shamli":"शामली","Shahjahanpur":"शाहजहांपुर","Sant Kabir Nagar":"संत कबीर नगर","Sambhal":"संभल","Saharanpur":"सहारनपुर","Rampur":"रामपुर","Raebareli":"रायबरेली","Pratapgarh":"प्रतापगढ़","Pilibhit":"पीलीभीत","Muzaffarnagar":"मुजफ्फरनगर","Moradabad":"मुरादाबाद","Mirzapur":"मिर्जापुर","Meerut":"मेरठ","Mau":"मऊ","Mathura":"मथुरा","Mainpuri":"मैनपुरी","Mahoba":"महोबा","Maharajganj":"महाराजगंज","Lucknow":"लखनऊ","Lalitpur":"ललितपुर","Lakhimpur Kheri":"लखीमपुर खीरी","Kushinagar":"कुशीनगर","Kaushambi":"कौशाम्बी","Kasganj":"कासगंज","Kanpur Nagar":"कानपूर नगर","Kanpur Dehat":"कानपूर देहात","Kannauj":"कन्नौज","Jhansi":"झांसी","Jaunpur":"जौनपुर","Jalaun":"जालौन","Hathras":"हाथरस ","Hardoi":"हरदोई","Hapur":"हापुड़","Hamirpur":"हमीरपुर","Gorakhpur":"गोरखपुर","Gonda":"गोण्डा","Ghazipur":"गाज़ीपुर","Ghaziabad":"गाज़ियाबाद","Gautam Buddha Nagar":"गौतम बुद्धा नगर","Firozabad":"फिरोज़ाबाद","Fatehpur":"फतेहपुर","Farrukhabad":"फर्रूखाबाद","Faizabad":"फैज़ाबाद","Etawah":"इटावा","Etah":"एटा","Deoria":"देवरिया","Chitrakoot":"चित्रकूट","Chandauli":"चन्दौली","Bulandshahar":"बुलन्दशहर","Budaun":"बदायूँ","Bijnor":"बिजनौर","Bhadohi":"भदोही ","Basti":"बस्ती","Bareilly":"बरेली","Barabanki":"बाराबंकी","Banda":"बाँदा","Balrampur":"बलरामपुर","Ballia":"बलिया","Bahraich":"बहराइच","Baghpat":"बागपत","Azamgarh":"आज़मगढ़","Auraiya":"औरैया","Amroha":"अमरोहा","Amethi":"अमेठी","Ambedkar Nagar":"अम्बेडकरनगर","Allahabad":"इलाहाबाद","Aligarh":"अलीगढ़","Agra":"आगरा"
     };
 
     this.all_districts = ["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahar","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kushinagar","Lakhimpur Kheri","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharth Nagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
 
-    let districts_in_data = this.props.dataJSON.map((e,i) => e.district),
-      hidden_districts = this.arrayDifference(districts_in_data, this.all_districts);
+    let districts_water_score = {};
+        // districts_in_data = this.props.dataJSON.map((e, i) => e.district),
+        // hidden_districts = this.arrayDifference(districts_in_data, this.all_districts);
+
+    this.props.dataJSON.forEach((e,i) => {
+      districts_water_score[e.district] = e.water_score;
+    });
 
     this.state = {
       projection: undefined,
@@ -27,16 +32,17 @@ class MapsCard extends React.Component {
       x:'100px',
       y:'100px',
       showTooltip:false,
-      hideDistricts: hidden_districts,
+      waterScore: districts_water_score,
+      // hideDistricts: hidden_districts,
       districts: this.all_districts
     }
   }
 
-  arrayDifference(newArr, oldArr) {
-    return oldArr.filter((e, i) => {
-      return !newArr.find((f, j) => { return f === e})
-    })
-  }
+  // arrayDifference(newArr, oldArr) {
+  //   return oldArr.filter((e, i) => {
+  //     return !newArr.find((f, j) => { return f === e})
+  //   })
+  // }
 
   // handleOnClick(e, card) {
   //   let props = this.props;
@@ -62,8 +68,9 @@ class MapsCard extends React.Component {
   // }
 
   handleMouseMove (e,d) {
-    e.target.style.fill='#007cd7';
-    e.target.style.fillOpacity='unset';
+    e.target.style.stroke = "#ffffff";
+    // e.target.style.fill='#007cd7';
+    // e.target.style.fillOpacity='unset';
     let rect = e.target.getBoundingClientRect();
     let mx=e.pageX;
     let my=e.pageY;
@@ -78,7 +85,8 @@ class MapsCard extends React.Component {
   }
 
   handleMouseOut (e,d){
-    e.target.style.fillOpacity='0';
+    e.target.style.stroke = "none";
+    // e.target.style.fillOpacity='0';
     this.setState({
       showTooltip:false,
       x: 0,
@@ -97,15 +105,15 @@ class MapsCard extends React.Component {
   //   // }
   // }
 
-  componentWillReceiveProps(nextProps) {
-    let districts_in_data = nextProps.dataJSON.map((e,i) => e.district),
-      hidden_districts = this.arrayDifference(districts_in_data, this.all_districts);
+  // componentWillReceiveProps(nextProps) {
+  //   let districts_in_data = nextProps.dataJSON.map((e,i) => e.district),
+  //     hidden_districts = this.arrayDifference(districts_in_data, this.all_districts);
 
 
-    this.setState({
-      hideDistricts: hidden_districts
-    }, this.componentWillMount);
-  }
+  //   this.setState({
+  //     hideDistricts: hidden_districts
+  //   }, this.componentWillMount);
+  // }
 
   componentWillMount() {
     let padding = this.props.mode === 'mobile' ? 20 : 0,
@@ -143,15 +151,20 @@ class MapsCard extends React.Component {
     })
 
     let outlines = country.features.map((d,i) => {
-      let is_hidden = this.state.hideDistricts.indexOf(d.properties.NAME_1) !== -1;
+      let score = this.state.waterScore[this.districtMapping[d.properties.NAME_1]],
+        heat_color = score === 'कठिन' ? 'protograph-bad-heat-color' : 'protograph-good-heat-color';
+
+      // let is_hidden = this.state.dataJSON.data.indexOf(d.properties.NAME_1) !== -1;
       return(
         <path
           key={i}
-          className={`geo region-outline ${is_hidden ? 'protogrpah-map-dulled-out' : ''}`}
+          className={`geo region-outline ${heat_color} protograph-trigger-modal`}
           d={path(d)}
-          // onClick={!is_hidden && ((e)=> this.handleMouseClick(e,d))}
-          onMouseOut={!is_hidden && ((e) => this.handleMouseOut(e, d))}
-          onMouseMove={!is_hidden && ((e) => this.handleMouseMove(e, d))}></path>
+          data-district_code={d.properties.NAME_1}
+          onClick={this.props.showModal}
+          onMouseOut={((e) => this.handleMouseOut(e, d))}
+          onMouseMove={((e) => this.handleMouseMove(e, d))}
+        />
       )
     })
 
@@ -187,5 +200,3 @@ class MapsCard extends React.Component {
 }
 
 export default MapsCard;
-
-// <Voronoi data={this.props.dataJSON} projection={projection} width={offsetWidth} height={actualHeight} mode={this.props.mode} circleClicked={this.props.circleClicked} handleCircleClicked={this.props.handleCircleClicked} circleHover={this.props.circleHover}/>

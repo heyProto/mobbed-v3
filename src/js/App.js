@@ -6,6 +6,7 @@ import Map from './Map.js';
 import Utils from './utility.js';
 import {timeFormat} from 'd3-time-format';
 import Filter from "./filter.js";
+import Modal from "./Modal.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,17 +17,23 @@ class App extends React.Component {
       category: null,
       filterJSON: [],
       filteredDataJSON: undefined,
-      filters: this.props.filters
+      filters: this.props.filters,
+      showModal: false,
+      card: undefined,
+      mode: window.innerWidth <= 500 ? 'col4' : 'col7'
     }
-    // this.handleCircleClicked = this.handleCircleClicked.bind(this);
-    // this.handleSelectDateRange = this.handleSelectDateRange.bind(this);
+    this.ListReference = undefined;
+    this.showModal = this.showModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
     const {dataURL, topoURL} = this.props;
-    axios.all([axios.get(dataURL), axios.get(topoURL)])
-      .then(axios.spread((card, topo) => {
-
+    axios.all([
+      axios.get(dataURL),
+      axios.get(topoURL)
+    ])
+    .then(axios.spread((card, topo) => {
         let all_data_keys = ["decadal_decrease_score", "rainfall_deficit_score", "land_score", "forest_score", "population_score"],
           districts_not_in_map = ["Amethi", "Hapur", "Sambhal", "Shamli"],
           data,
@@ -95,11 +102,6 @@ class App extends React.Component {
       $('.banner-area .sticky-wrapper').css("display", 'inline-block');
     }
 
-    // $('#myTab a').on('click', function (e) {
-    //   e.preventDefault()
-    //   $(this).tab('show')
-    // });
-
     $(".tabs-area .single-tab").on("click", function(e){
       $(".single-tab").removeClass("active-tab");
       $(this).addClass("active-tab");
@@ -108,16 +110,6 @@ class App extends React.Component {
     });
 
   }
-
-  // renderRating(d) {
-  //   let ratings = ['खराब', 'औसत से कम', 'औसत', 'औसत से ऊपर', 'अच्छा'],
-  //     i;
-  //   if (d.value === "उपलब्ध नहीं") {
-  //     return d.name;
-  //   }
-
-  //   return ratings[d.value - 1];
-  // }
 
   renderRating(d) {
     let stars = [],
@@ -144,9 +136,8 @@ class App extends React.Component {
     for (var prop in obj) {
       if (obj.hasOwnProperty(prop)) {
         arr.push({
-          'name': `रेटिंग - ${prop}`,
-          'renderName': this.renderRating,
-          'value': prop,
+          'name': prop,
+          'value': !isNaN(+prop) ? +prop : prop,
           'count': obj[prop].length
         });
       }
@@ -187,9 +178,28 @@ class App extends React.Component {
     });
   }
 
+  showModal(e) {
+    let district = e.target.closest('.protograph-trigger-modal').getAttribute('data-district_code'),
+      data = this.state.dataJSON.filter((k, i) => {
+        return k.district_code === district;
+      })[0];
+
+    this.setState({
+      iframeURL: data.iframe_url,
+      showModal: true
+    })
+  }
+
+  closeModal() {
+    this.setState({
+      iframeURL: undefined,
+      showModal: false
+    })
+  }
+
   renderLaptop() {
     if (this.state.dataJSON === undefined) {
-      let color = '#007cd7';
+      let color = '#F02E2E';
 
       let style = {
         display: '-webkit-flex',
@@ -237,21 +247,36 @@ class App extends React.Component {
               dataJSON={this.state.filteredDataJSON}
               filterJSON={this.state.filterJSON}
               onChange={(e) => {this.onChange(e);}}
-              hintText="नोट: 5 स्टार का मतलब सबसे अच्छा, 1 स्टार सबेसे बुरा। हर ज़िले की स्टार रेटिंग्स उत्तर प्रदेश के बाक़ी जिलों की तुलना में हैं।"
+              hintText=""
             />
           </div>
           <div className="proto-col col-12 protograph-app-map-and-list">
               <div className="tabs-area">
-                <div className="single-tab active-tab" id='list-tab' data-href='#list-area'>सूची</div>
-                <div className="single-tab" id='map-tab' data-href='#map-area' >नक्शा</div>
+                <div className="single-tab active-tab" id='list-tab' data-href='#list-area'>List</div>
+                <div className="single-tab" id='map-tab' data-href='#map-area' >Map</div>
               </div>
               <div className="tabs map-area" id='map-area'>
-                <p>Map comes here.</p>
-                {/* <Map dataJSON={this.state.filteredDataJSON} topoJSON={this.state.topoJSON} chartOptions={this.props.chartOptions} mode={this.props.mode} /> */}
+                <Map
+                  dataJSON={this.state.filteredDataJSON}
+                  topoJSON={this.state.topoJSON}
+                  chartOptions={this.props.chartOptions}
+                  showModal={this.showModal}
+                  mode={this.props.mode}
+                />
               </div>
               <div className="tabs list-area active-area" id='list-area'>
-                <List dataJSON={this.state.filteredDataJSON} mode={this.props.mode} />
+                <List
+                  dataJSON={this.state.filteredDataJSON}
+                  mode={this.props.mode}
+                  showModal={this.showModal}
+                />
               </div>
+              <Modal
+                showModal={this.state.showModal}
+                closeModal={this.closeModal}
+                mode={this.state.mode}
+                iframeURL={this.state.iframeURL}
+              />
           </div>
         </div>
       )

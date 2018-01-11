@@ -86,8 +86,8 @@ $(document).ready((e) => {
 var x = new ProtoGraph.Card.toMaps()
   x.init({
   selector: document.querySelector('#card-list-div'),
-  dataURL: 'https://dkqrqc7q64awx.cloudfront.net/b0cf35e9943e8e913cdf57d1/index.json',
-  topoURL: 'https://cdn.protograph.pykih.com/jaljagran-3/uttar_pradesh-topo.json',
+  dataURL: "http://protograph.indianexpress.com/49a045aea2b71456f5d04f4a/index.json",
+  topoURL: 'http://protograph.indianexpress.com/ie-mobbed/src/data/india-topo.json',
   chartOptions: {
     chartTitle: 'Mob Justice in India',
     height: 500,
@@ -95,36 +95,69 @@ var x = new ProtoGraph.Card.toMaps()
   },
   filterConfigurationJSON: {
     colors: {
-      house_color: '#007cd7',
+      house_color: '#F02E2E',
       text_color: '#343434',
-      active_text_color: '#007cd7',
+      active_text_color: '#F02E2E',
       filter_summary_text_color: '#ffffff',
       filter_heading_text_color: '#ffffff'
     },
-    selected_heading: 'फिल्टर',
-    reset_filter_text: 'रीसेट'
+    selected_heading: 'Filters',
+    reset_filter_text: 'Reset'
   },
   filters: [
     {
-      propName: 'land_score',
-      alias: 'भूमि उपयोग'
+      propName: 'classification',
+      alias: 'What led to the violence?'
     },
     {
-      propName: 'forest_score',
-      alias: 'वन कवर'
+      propName: 'was_incident_planned',
+      alias: 'Was the incident planned?'
     },
     {
-      propName: 'population_score',
-      alias: 'जनसंख्या'
+      propName: 'state',
+      alias: 'States that have the most incidents'
     },
     {
-      propName: 'rainfall_deficit_score',
-      alias: 'वर्षा में घाटे'
+      propName: 'party_whose_chief_minister_is_in_power',
+      alias: 'Party whose Chief Minister was in power'
     },
     {
-      propName: 'decadal_decrease_score',
-      alias: 'भूजल स्तर में दशमांश की कमी'
+      propName: 'area_classification',
+      alias: 'Area type'
+    },
+    {
+      propName: 'judge_to_population_in_state',
+      alias: 'Judge to population ratio'
+    },
+    {
+      propName: 'police_to_population_in_state',
+      alias: 'Police to population ratio'
+    },
+    {
+      propName: 'police_vehicles_per_km',
+      alias: 'Police vehicles per sq. km'
+    },
+    {
+      propName: 'did_the_police_intervene',
+      alias: 'Did the police intervene?'
+    },
+    {
+      propName: 'did_the_police_intervention_prevent_death',
+      alias: 'Did the police intervention prevent death?'
+    },
+    { 
+      propName: 'does_state_have_village_defence_force',
+      alias: 'Does state have village defence force?'
+    },
+    {
+      propName: 'victim_social_classification',
+      alias: 'Victim social classification'
+    },
+    {
+      propName: 'accused_social_classification',
+      alias: 'Accused social classification'
     }
   ]
 })
 x.renderLaptop();
+    

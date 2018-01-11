@@ -143,8 +143,8 @@
   cursor: pointer; }
 
 .active-tab {
-  color: #007cd7;
-  border-color: #007cd7; }
+  color: #F02E2E;
+  border-color: #F02E2E; }
 
 .tabs {
   display: none; }
@@ -196,7 +196,7 @@
   fill: #fdf8d8;
 }
 .region-outline{
-  /* cursor: pointer; */
+  cursor: pointer;
   stroke: none;
   fill-opacity: 0;
 }
@@ -204,14 +204,14 @@
   width: 100%;
   text-align: center;
   margin-top: 20px;
-  height: 100vh;
-  overflow-y: scroll;
+  /* height: 100vh; */
+  overflow-y: auto;
 }
 .protograph-card{
   width: 140px;
   height: 140px;
   cursor: pointer;
-  display: none;
+  display: inline-block;
   text-align: left;
   background: whitesmoke;
   margin-right: 20px;
@@ -342,7 +342,7 @@
   font-size: 28px !important;
 }
 .protograph-star-small {
-	font-size: 16px !important;
+  font-size: 16px !important;
 }
 .protograph-active-star {
   color: #f7ca4a;
@@ -353,6 +353,68 @@
 
 .div-without-margin-right{
   margin-right: 0px;
+}
+
+.protograph-good-heat-color {
+  fill: #7ABAE8;
+  fill-opacity: 1;
+}
+.protograph-bad-heat-color {
+  fill: #0082CD;
+  fill-opacity: 1;
+}
+.protograph-grid-card {
+  cursor: pointer;
+  position: relative;
+}
+.protograph-grid-card-interaction-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.protograph-grid-card:hover .protograph-grid-card-interaction-overlay  {
+  display: block;
+}
+.protograph-modal-overlay {
+  background: rgba(0,0,0,0.75);
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+.protograph-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  min-height: 10px;
+}
+.protograph-modal:focus {
+  outline: none;
+}
+.protograph-close-modal {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  height: 30px;
+  width: 30px;
+  background: blue;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.protograph-close-text {
+  font-size: 15px;
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
 
 @media only screen and (max-width: 450px ) {
